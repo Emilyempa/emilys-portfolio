@@ -21,7 +21,7 @@ const projects = [
   {
     title: "Wordle Clone",
     description:
-      "A Fullstack recreation of the popular word puzzle game with MongoDB Atlas database for highscore functionality, and an intuitive game interface.",
+      "A Fullstack recreation of the popular word puzzle game with MongoDB Atlas database for highscore functionality, and an intuitive game interface. The project has been tested with Cypress for comprehensive end-to-end (E2E) testing.",
     tech: [
       "React",
       "Vite",
