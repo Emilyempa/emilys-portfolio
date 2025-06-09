@@ -56,7 +56,7 @@ export const Contact = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <a 
-                  href="https://github.com/yourusername"
+                  href="https://github.com/Emilyempa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 p-3 rounded-lg border hover:bg-accent transition-colors"
@@ -64,7 +64,7 @@ export const Contact = () => {
                   <Github className="h-5 w-5" />
                   <div>
                     <div className="font-medium">GitHub</div>
-                    <div className="text-sm text-muted-foreground">@yourusername</div>
+                    <div className="text-sm text-muted-foreground">@EmilyEmpa</div>
                   </div>
                 </a>
               </CardContent>

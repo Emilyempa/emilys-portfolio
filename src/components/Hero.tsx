@@ -4,7 +4,7 @@ export const Hero = () => {
     <section className="py-24 px-4">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          Hi, I'm <span className="text-primary">Your Name</span>
+          Hi, I'm <span className="text-primary">Emily Pettersson</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
           A passionate developer creating innovative web applications and interactive experiences

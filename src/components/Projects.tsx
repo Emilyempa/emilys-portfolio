@@ -7,15 +7,15 @@ const projects = [
     title: "Mock Cinema",
     description: "A movie theater application that simulates a cinema experience with movie listings, showtimes, and ticket booking functionality.",
     tech: ["React", "JavaScript", "CSS"],
-    github: "https://github.com/yourusername/mock-cinema",
+    github: "https://github.com/Emilyempa/mock-cinema",
     demo: "#",
-    image: "https://images.unsplash.com/photo-1489599510139-46b6b3f88b04?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop"
   },
   {
     title: "To-Do App",
     description: "A clean and intuitive task management application with features like task creation, completion tracking, and local storage persistence.",
     tech: ["React", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/yourusername/to-do-app",
+    github: "https://github.com/Emilyempa/to-do-app",
     demo: "#",
     image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop"
   },
@@ -23,9 +23,9 @@ const projects = [
     title: "Wordle Clone",
     description: "A recreation of the popular word puzzle game Wordle with daily challenges, statistics tracking, and an intuitive game interface.",
     tech: ["React", "JavaScript", "CSS"],
-    github: "https://github.com/yourusername/wordle",
+    github: "https://github.com/Emilyempa/wordle",
     demo: "#",
-    image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=600&h=400&fit=crop"
   }
 ];
 
