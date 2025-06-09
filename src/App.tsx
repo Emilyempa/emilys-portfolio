@@ -10,9 +10,6 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  useEffect(() => {
-    document.title = "Emily's Portfolio";
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
