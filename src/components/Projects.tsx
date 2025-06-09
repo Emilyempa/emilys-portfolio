@@ -6,7 +6,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Github } from "lucide-react";
-// import popcornImage from ./public/popcorn.png;
 
 const projects = [
   {
