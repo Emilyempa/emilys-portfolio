@@ -184,11 +184,14 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  I'm a passionate fullstack developer who enjoys creating
+                  I'm a passionate fullstack developer who enjoys exploring
                   innovative and user-friendly web applications. My projects
                   reflect my commitment to accessibility, intuitive design, and
-                  modern development practices—always with the user experience
-                  in mind.
+                  modern development practices. This portfolio is the result of
+                  my curiosity about AI-driven development and my exploration of
+                  Loveable—an experience that has deepened my understanding of
+                  emerging technologies and how they shape the future of digital
+                  experiences.
                 </p>
               </CardContent>
             </Card>
