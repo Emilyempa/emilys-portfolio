@@ -173,6 +173,27 @@ export const Contact = () => {
                     </div>
                   </div>
                 </a>
+                <a
+                  href="https://www.linkedin.com/in/emily-pettersson-865157301/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 p-3 rounded-lg border border-secondary/30 hover:bg-secondary/20 transition-all retro-border hover:shadow-lg hover:shadow-secondary/30"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-secondary"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M4.98 3.5C3.34 3.5 2 4.84 2 6.48c0 1.63 1.34 2.97 2.98 2.97s2.97-1.34 2.97-2.97c0-1.64-1.33-2.98-2.97-2.98zM3.5 8H6.5V21H3.5zM9 8H12v2h.07c.55-1.04 1.89-2 3.93-2 4.2 0 4.98 2.77 4.98 6.38V21h-3V14.63c0-1.54-.03-3.5-2.13-3.5-2.13 0-2.46 1.67-2.46 3.4V21H9V8z" />
+                  </svg>
+                  <div>
+                    <div className="font-medium text-secondary">LinkedIn</div>
+                    <div className="text-sm text-muted-foreground">
+                      @Emily Pettersson
+                    </div>
+                  </div>
+                </a>
               </CardContent>
             </Card>
 
