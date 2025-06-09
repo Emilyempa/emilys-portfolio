@@ -5,27 +5,27 @@ import { Github } from "lucide-react";
 const projects = [
   {
     title: "Mock Cinema",
-    description: "A movie theater application that simulates a cinema experience with movie listings, showtimes, and ticket booking functionality.",
-    tech: ["React", "JavaScript", "CSS"],
+    description: "A team project that simulates a cinema experience with movie listings, showtimes, ticket booking functionality, and user authentication with login capabilities.",
+    tech: ["Next.js", "TypeScript", "MUI", "Tailwind CSS"],
     github: "https://github.com/Emilyempa/mock-cinema",
     demo: "#",
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1489599749064-2e62b36a2a97?w=600&h=400&fit=crop"
   },
   {
     title: "To-Do App",
     description: "A clean and intuitive task management application with features like task creation, completion tracking, and local storage persistence.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
+    tech: ["JavaScript", "CSS", "HTML"],
     github: "https://github.com/Emilyempa/to-do-app",
     demo: "#",
     image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop"
   },
   {
     title: "Wordle Clone",
-    description: "A recreation of the popular word puzzle game Wordle with daily challenges, statistics tracking, and an intuitive game interface.",
-    tech: ["React", "JavaScript", "CSS"],
+    description: "A recreation of the popular word puzzle game with daily challenges, statistics tracking, MongoDB Atlas database for highscore functionality, and an intuitive game interface.",
+    tech: ["React", "JavaScript", "MUI", "CSS", "MongoDB Atlas"],
     github: "https://github.com/Emilyempa/wordle",
     demo: "#",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1486237499506-c15a630ad6a1?w=600&h=400&fit=crop"
   }
 ];
 
