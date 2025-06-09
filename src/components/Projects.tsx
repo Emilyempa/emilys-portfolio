@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Github } from "lucide-react";
+// import popcornImage from ./public/popcorn.png;
 
 const projects = [
   {
@@ -9,7 +10,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "MUI", "Tailwind CSS"],
     github: "https://github.com/Emilyempa/mock-cinema",
     demo: "#",
-    image: "https://images.unsplash.com/photo-1489599749064-2e62b36a2a97?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1579642761360-eabd1cca1e81?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     title: "To-Do App",
@@ -17,7 +18,7 @@ const projects = [
     tech: ["JavaScript", "CSS", "HTML"],
     github: "https://github.com/Emilyempa/to-do-app",
     demo: "#",
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1665808282962-9bd99d7fe3f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     title: "Wordle Clone",
@@ -25,7 +26,7 @@ const projects = [
     tech: ["React", "JavaScript", "MUI", "CSS", "MongoDB Atlas"],
     github: "https://github.com/Emilyempa/wordle",
     demo: "#",
-    image: "https://images.unsplash.com/photo-1486237499506-c15a630ad6a1?w=600&h=400&fit=crop"
+    image: "https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ];
 
