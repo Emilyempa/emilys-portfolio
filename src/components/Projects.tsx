@@ -21,7 +21,7 @@ const projects = [
   },
   {
     title: "Wordle Clone",
-    description: "A recreation of the popular word puzzle game with daily challenges, statistics tracking, MongoDB Atlas database for highscore functionality, and an intuitive game interface.",
+    description: "A recreation of the popular word puzzle game with MongoDB Atlas database for highscore functionality, and an intuitive game interface.",
     tech: ["React", "JavaScript", "MUI", "CSS", "MongoDB Atlas"],
     github: "https://github.com/Emilyempa/wordle",
     demo: "#",
