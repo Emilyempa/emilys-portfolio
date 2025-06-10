@@ -78,8 +78,12 @@ export const Contact = () => {
         description: "Thank you for your message. I'll get back to you soon!",
       });
 
-    } catch (error: any) {
-      console.error("Error sending email:", error);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Error sending email:", error.message);
+      } else {
+        console.error("Error sending email:", error);
+      }
       toast({
         title: "Error",
         description: "Failed to send message. Please try again later.",
