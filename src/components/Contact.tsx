@@ -1,3 +1,4 @@
+
 import {
   Card,
   CardContent,
@@ -9,6 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Github } from "lucide-react";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +20,7 @@ export const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,7 +32,11 @@ export const Contact = () => {
       !formData.email.trim() ||
       !formData.message.trim()
     ) {
-      alert("Please fill in all fields");
+      toast({
+        title: "Validation Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
       setIsSubmitting(false);
       return;
     }
@@ -36,20 +44,50 @@ export const Contact = () => {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      alert("Please enter a valid email address");
+      toast({
+        title: "Validation Error",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
       setIsSubmitting(false);
       return;
     }
 
-    // Simulate form submission (you'll need a backend to handle this securely)
-    console.log("Form submitted:", formData);
+    try {
+      console.log("Sending contact form:", formData);
 
-    // Reset form after submission
-    setTimeout(() => {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      console.log("Email sent successfully:", data);
+
+      // Reset form after successful submission
       setFormData({ name: "", email: "", message: "" });
+      
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+
+    } catch (error: any) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-      alert("Message sent successfully!");
-    }, 1000);
+    }
   };
 
   const handleInputChange = (
