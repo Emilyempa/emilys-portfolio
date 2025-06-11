@@ -11,11 +11,10 @@ export const Hero = () => {
           Fullstack Developer
         </h2>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          I am a driven student and I thrive on continuous learning and love challenging
-          myself to improve with every project I take on. As a system
-          development student I embrace curiosity, teamwork, and creativity,
-          always aiming to develop meaningful solutions and sharpen my skills
-          along the way.
+          I am a driven system development student and I thrive on continuous
+          learning and love challenging myself to improve with every project I
+          take on. I have one year of experience in full-stack development, and
+          next term I will be focusing on Java.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
