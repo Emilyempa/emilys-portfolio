@@ -11,11 +11,11 @@ export const Hero = () => {
           Fullstack Developer
         </h2>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Developing dynamic and scalable web applications using Java,
-          JavaScript, and modern development practices. With a strong foundation
-          in system architecture, accessibility, and agile methodologies, I
-          create solutions that are efficient, user-friendly, and aligned with
-          the latest industry standards.
+          I am a driven student and I thrive on continuous learning and love challenging
+          myself to improve with every project I take on. As a system
+          development student I embrace curiosity, teamwork, and creativity,
+          always aiming to develop meaningful solutions and sharpen my skills
+          along the way.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
