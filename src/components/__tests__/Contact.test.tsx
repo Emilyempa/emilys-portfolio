@@ -1,13 +1,20 @@
 
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@/test/test-utils';
 import userEvent from '@testing-library/user-event';
 import { Contact } from '../Contact';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 
 // Mock the hooks and modules
-jest.mock('@/integrations/supabase/client');
+jest.mock('@/integrations/supabase/client', () => ({
+  supabase: {
+    functions: {
+      invoke: jest.fn(),
+    },
+  },
+}));
+
 jest.mock('@/hooks/use-toast');
 
 const mockSupabase = supabase as jest.Mocked<typeof supabase>;
@@ -77,7 +84,7 @@ describe('Contact Component', () => {
 
   it('successfully submits valid form', async () => {
     const user = userEvent.setup();
-    mockSupabase.functions.invoke.mockResolvedValue({
+    (mockSupabase.functions.invoke as jest.Mock).mockResolvedValue({
       data: { success: true },
       error: null,
     });
@@ -109,7 +116,7 @@ describe('Contact Component', () => {
 
   it('handles submission error correctly', async () => {
     const user = userEvent.setup();
-    mockSupabase.functions.invoke.mockRejectedValue(new Error('Network error'));
+    (mockSupabase.functions.invoke as jest.Mock).mockRejectedValue(new Error('Network error'));
     
     render(<Contact />);
     
@@ -135,7 +142,7 @@ describe('Contact Component', () => {
     const promise = new Promise((resolve) => {
       resolvePromise = resolve;
     });
-    mockSupabase.functions.invoke.mockReturnValue(promise);
+    (mockSupabase.functions.invoke as jest.Mock).mockReturnValue(promise);
     
     render(<Contact />);
     
@@ -179,7 +186,7 @@ describe('Contact Component', () => {
 
   it('clears form after successful submission', async () => {
     const user = userEvent.setup();
-    mockSupabase.functions.invoke.mockResolvedValue({
+    (mockSupabase.functions.invoke as jest.Mock).mockResolvedValue({
       data: { success: true },
       error: null,
     });
