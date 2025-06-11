@@ -57,11 +57,7 @@ export const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-secondary retro-glow">
             Skills & Technologies
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of the technologies and tools I work with
-            to create innovative and efficient solutions.
-          </p>
+          </h2>         
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
