@@ -1,8 +1,6 @@
 import {
-  Code,
   Database,
   Globe,
-  Smartphone,
   GitBranch,
   Server,
   Palette,
@@ -42,25 +40,12 @@ const skills = [
   {
     category: "Design",
     icon: Palette,
-    technologies: [
-      "UI/UX Design",
-      "Responsive Design",
-      "Figma",
-      "Adobe Creative Suite",
-    ],
+    technologies: ["UI/UX Design", "Responsive Design", "Figma"],
   },
   {
     category: "Development",
     icon: Terminal,
-    technologies: [
-      "Agile",
-      "Scrum",
-      "Testing",
-      "Debugging",
-      "Jest",
-      "Cypress",
-      "Version Control",
-    ],
+    technologies: ["Agile", "Scrum", "Testing", "Debugging", "Jest", "Cypress"],
   },
 ];
 
