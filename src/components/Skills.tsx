@@ -45,7 +45,7 @@ const skills = [
   {
     category: "Development",
     icon: Terminal,
-    technologies: ["Agile", "Scrum", "Testing", "Debugging", "Jest", "Cypress"],
+    technologies: ["Agile", "Testing", "Debugging", "Jest", "Cypress"],
   },
 ];
 
