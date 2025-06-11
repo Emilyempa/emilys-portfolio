@@ -17,8 +17,7 @@ const skills = [
       "JavaScript",
       "TypeScript",
       "HTML5",
-      "CSS",
-      "SASS",
+      "CSS/SASS",      
       "MUI",
       "Tailwind CSS"
     ],
