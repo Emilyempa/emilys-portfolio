@@ -9,6 +9,9 @@ export const Header = () => {
           <h1 className="text-xl font-bold text-primary retro-glow">Emily's Portfolio</h1>
         </div>
         <nav className="flex items-center space-x-6">
+          <a href="#skills" className="text-sm font-medium hover:text-accent transition-colors hover:retro-glow">
+            Skills
+          </a>
           <a href="#projects" className="text-sm font-medium hover:text-primary transition-colors hover:retro-glow">
             Projects
           </a>

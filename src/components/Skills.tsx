@@ -51,7 +51,7 @@ const skills = [
 
 export const Skills = () => {
   return (
-    <section className="py-24 px-4 relative">
+    <section id="skills" className="py-24 px-4 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-secondary/5 to-accent/5"></div>
       <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
