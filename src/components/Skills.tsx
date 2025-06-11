@@ -1,46 +1,67 @@
-
-import { 
-  Code, 
-  Database, 
-  Globe, 
-  Smartphone, 
-  GitBranch, 
+import {
+  Code,
+  Database,
+  Globe,
+  Smartphone,
+  GitBranch,
   Server,
   Palette,
-  Terminal
+  Terminal,
 } from "lucide-react";
 
 const skills = [
   {
     category: "Frontend",
     icon: Globe,
-    technologies: ["React", "JavaScript", "TypeScript", "HTML5", "CSS", "SASS", "MUI", "Tailwind CSS"]
+    technologies: [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML5",
+      "CSS",
+      "SASS",
+      "MUI",
+      "Tailwind CSS",
+    ],
   },
   {
     category: "Backend",
     icon: Server,
-    technologies: ["Node.js", "REST APIs", "Express.js"]
+    technologies: ["Node.js", "REST APIs", "Express.js"],
   },
   {
     category: "Database",
     icon: Database,
-    technologies: ["MariaDB","MongoDB", "Supabase",]
-  }, 
+    technologies: ["MariaDB", "MongoDB", "Supabase"],
+  },
   {
     category: "Tools & DevOps",
     icon: GitBranch,
-    technologies: ["Git", "GitHub", "Docker", "VS Code", "Figma", "npm"]
-  }, 
+    technologies: ["Git", "GitHub", "Docker", "VS Code", "Figma", "npm"],
+  },
   {
     category: "Design",
     icon: Palette,
-    technologies: ["UI/UX Design", "Responsive Design", "Figma", "Adobe Creative Suite"]
+    technologies: [
+      "UI/UX Design",
+      "Responsive Design",
+      "Figma",
+      "Adobe Creative Suite",
+    ],
   },
   {
     category: "Development",
     icon: Terminal,
-    technologies: ["Agile", "Scrum", "Testing", "Debugging", "Jest", "Cypress", "Version Control"]
-  }
+    technologies: [
+      "Agile",
+      "Scrum",
+      "Testing",
+      "Debugging",
+      "Jest",
+      "Cypress",
+      "Version Control",
+    ],
+  },
 ];
 
 export const Skills = () => {
@@ -53,8 +74,8 @@ export const Skills = () => {
             Skills & Technologies
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of the technologies and tools I work with to create 
-            innovative and efficient solutions.
+            A comprehensive overview of the technologies and tools I work with
+            to create innovative and efficient solutions.
           </p>
         </div>
 
@@ -72,7 +93,7 @@ export const Skills = () => {
                   {skill.category}
                 </h3>
               </div>
-              
+
               <div className="flex flex-wrap gap-2">
                 {skill.technologies.map((tech, techIndex) => (
                   <span
@@ -85,20 +106,6 @@ export const Skills = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <div className="retro-card p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-accent mb-4 retro-glow">
-              Always Learning
-            </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              As a passionate developer, I'm constantly exploring new technologies and expanding my skill set. 
-              I believe in staying current with industry trends and best practices to deliver cutting-edge solutions. 
-              My curiosity drives me to experiment with emerging frameworks, tools, and methodologies that can 
-              enhance the development process and user experience.
-            </p>
-          </div>
         </div>
       </div>
     </section>
