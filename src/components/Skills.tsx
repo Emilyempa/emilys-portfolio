@@ -14,33 +14,23 @@ const skills = [
   {
     category: "Frontend",
     icon: Globe,
-    technologies: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"]
+    technologies: ["React", "JavaScript", "TypeScript", "HTML5", "CSS", "SASS", "MUI", "Tailwind CSS"]
   },
   {
     category: "Backend",
     icon: Server,
-    technologies: ["Node.js", "Python", "Java", "REST APIs", "Express.js"]
+    technologies: ["Node.js", "REST APIs", "Express.js"]
   },
   {
     category: "Database",
     icon: Database,
-    technologies: ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "Firebase"]
-  },
-  {
-    category: "Mobile",
-    icon: Smartphone,
-    technologies: ["React Native", "Flutter", "iOS", "Android"]
-  },
+    technologies: ["MariaDB","MongoDB", "Supabase",]
+  }, 
   {
     category: "Tools & DevOps",
     icon: GitBranch,
     technologies: ["Git", "GitHub", "Docker", "VS Code", "Figma", "npm"]
-  },
-  {
-    category: "Languages",
-    icon: Code,
-    technologies: ["TypeScript", "JavaScript", "Python", "Java", "C++", "SQL"]
-  },
+  }, 
   {
     category: "Design",
     icon: Palette,
@@ -49,7 +39,7 @@ const skills = [
   {
     category: "Development",
     icon: Terminal,
-    technologies: ["Agile", "Scrum", "Testing", "Debugging", "Version Control"]
+    technologies: ["Agile", "Scrum", "Testing", "Debugging", "Jest", "Cypress", "Version Control"]
   }
 ];
 
