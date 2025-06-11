@@ -1,8 +1,7 @@
-
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
 // Mock Supabase client
-jest.mock('@/integrations/supabase/client', () => ({
+jest.mock("@/integrations/supabase/client", () => ({
   supabase: {
     functions: {
       invoke: jest.fn(),
@@ -11,7 +10,7 @@ jest.mock('@/integrations/supabase/client', () => ({
 }));
 
 // Mock toast hook
-jest.mock('@/hooks/use-toast', () => ({
+jest.mock("@/hooks/use-toast", () => ({
   useToast: () => ({
     toast: jest.fn(),
   }),
