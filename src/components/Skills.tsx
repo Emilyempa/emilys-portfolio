@@ -13,13 +13,14 @@ const skills = [
     icon: Globe,
     technologies: [
       "React",
+      "Next.js",
       "JavaScript",
       "TypeScript",
       "HTML5",
       "CSS",
       "SASS",
       "MUI",
-      "Tailwind CSS",
+      "Tailwind CSS"
     ],
   },
   {
@@ -35,12 +36,12 @@ const skills = [
   {
     category: "Tools & DevOps",
     icon: GitBranch,
-    technologies: ["Git", "GitHub", "Docker", "VS Code", "Figma", "npm"],
+    technologies: ["Git", "GitHub", "Docker", "VS Code", "Figma", "npm", "GitHub Actions"]
   },
   {
     category: "Design",
     icon: Palette,
-    technologies: ["UI/UX Design", "Responsive Design", "Figma"],
+    technologies: ["UI/UX Design", "Responsive Design", "Figma", "WCAG"],
   },
   {
     category: "Development",
