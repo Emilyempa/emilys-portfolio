@@ -1,4 +1,3 @@
-
 import {
   Card,
   CardContent,
@@ -56,13 +55,16 @@ export const Contact = () => {
     try {
       console.log("Sending contact form:", formData);
 
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-      });
+      const { data, error } = await supabase.functions.invoke(
+        "send-contact-email",
+        {
+          body: {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          },
+        }
+      );
 
       if (error) {
         throw error;
@@ -72,12 +74,11 @@ export const Contact = () => {
 
       // Reset form after successful submission
       setFormData({ name: "", email: "", message: "" });
-      
+
       toast({
         title: "Message Sent!",
         description: "Thank you for your message. I'll get back to you soon!",
       });
-
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error("Error sending email:", error.message);

@@ -43,7 +43,9 @@ describe("Contact Component", () => {
     expect(screen.getByLabelText("Name")).toBeInTheDocument();
     expect(screen.getByLabelText("Email")).toBeInTheDocument();
     expect(screen.getByLabelText("Message")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Send Message" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Send Message" })
+    ).toBeInTheDocument();
   });
 
   it("renders social links correctly", () => {
@@ -59,10 +61,12 @@ describe("Contact Component", () => {
     const submitButton = screen.getByRole("button", { name: "Send Message" });
     await user.click(submitButton);
 
-    expect(mockToast).toHaveBeenCalledWith({
-      title: "Validation Error",
-      description: "Please fill in all fields",
-      variant: "destructive",
+    await waitFor(() => {
+      expect(mockToast).toHaveBeenCalledWith({
+        title: "Validation Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
     });
   });
 
@@ -73,14 +77,16 @@ describe("Contact Component", () => {
     await user.type(screen.getByLabelText("Name"), "John Doe");
     await user.type(screen.getByLabelText("Email"), "invalid-email");
     await user.type(screen.getByLabelText("Message"), "Test message");
-    
+
     const submitButton = screen.getByRole("button", { name: "Send Message" });
     await user.click(submitButton);
 
-    expect(mockToast).toHaveBeenCalledWith({
-      title: "Validation Error",
-      description: "Please enter a valid email address",
-      variant: "destructive",
+    await waitFor(() => {
+      expect(mockToast).toHaveBeenCalledWith({
+        title: "Validation Error",
+        description: "Please enter a valid email address",
+        variant: "destructive",
+      });
     });
   });
 
@@ -95,14 +101,20 @@ describe("Contact Component", () => {
     await user.type(screen.getByLabelText("Name"), "John Doe");
     await user.type(screen.getByLabelText("Email"), "john@example.com");
     await user.type(screen.getByLabelText("Message"), "Test message");
-    
+
     const submitButton = screen.getByRole("button", { name: "Send Message" });
     await user.click(submitButton);
 
     await waitFor(() => {
       expect(mockSupabase.functions.invoke).toHaveBeenCalledWith(
         "send-contact-email",
-        { body: { name: "John Doe", email: "john@example.com", message: "Test message" } }
+        {
+          body: {
+            name: "John Doe",
+            email: "john@example.com",
+            message: "Test message",
+          },
+        }
       );
     });
 
@@ -114,7 +126,9 @@ describe("Contact Component", () => {
 
   it("handles submission error correctly", async () => {
     const user = userEvent.setup();
-    (mockSupabase.functions.invoke as jest.Mock).mockRejectedValue(new Error("Network error"));
+    (mockSupabase.functions.invoke as jest.Mock).mockRejectedValue(
+      new Error("Network error")
+    );
 
     render(<Contact />);
     await user.type(screen.getByLabelText("Name"), "John Doe");
@@ -138,7 +152,7 @@ describe("Contact Component", () => {
     render(<Contact />);
     const nameInput = screen.getByLabelText("Name");
     await user.type(nameInput, 'John <script>alert("hack")</script> Doe');
-    expect(nameInput).toHaveValue("John alert(\"hack\") Doe");
+    expect(nameInput).toHaveValue('John alert("hack") Doe');
   });
 
   it("clears form after successful submission", async () => {
