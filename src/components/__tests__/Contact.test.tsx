@@ -1,3 +1,4 @@
+
 import { render, screen, fireEvent, waitFor } from "@/test/test-utils";
 import userEvent from "@testing-library/user-event";
 import { Contact } from "../Contact";
@@ -92,7 +93,7 @@ describe("Contact Component", () => {
 
   it("successfully submits valid form", async () => {
     const user = userEvent.setup();
-    (mockSupabase.functions.invoke as jest.Mock).mockResolvedValue({
+    mockSupabase.functions.invoke.mockResolvedValue({
       data: { success: true },
       error: null,
     });
@@ -118,15 +119,17 @@ describe("Contact Component", () => {
       );
     });
 
-    expect(mockToast).toHaveBeenCalledWith({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
+    await waitFor(() => {
+      expect(mockToast).toHaveBeenCalledWith({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
     });
   });
 
   it("handles submission error correctly", async () => {
     const user = userEvent.setup();
-    (mockSupabase.functions.invoke as jest.Mock).mockRejectedValue(
+    mockSupabase.functions.invoke.mockRejectedValue(
       new Error("Network error")
     );
 
@@ -157,7 +160,7 @@ describe("Contact Component", () => {
 
   it("clears form after successful submission", async () => {
     const user = userEvent.setup();
-    (mockSupabase.functions.invoke as jest.Mock).mockResolvedValue({
+    mockSupabase.functions.invoke.mockResolvedValue({
       data: { success: true },
       error: null,
     });
