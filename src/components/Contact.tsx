@@ -11,6 +11,15 @@ import { Github } from "lucide-react";
 import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { 
+  sanitizeInput, 
+  sanitizeEmailContent, 
+  validateFormContent, 
+  createRateLimiter 
+} from "@/lib/security";
+
+// Create rate limiter: 3 requests per 5 minutes
+const rateLimiter = createRateLimiter(3, 5 * 60 * 1000);
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,33 +28,41 @@ export const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<string[]>([]);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-
-    // Basic client-side validation
-    if (
-      !formData.name.trim() ||
-      !formData.email.trim() ||
-      !formData.message.trim()
-    ) {
+    
+    // Clear previous validation errors
+    setValidationErrors([]);
+    
+    // Check rate limiting
+    if (!rateLimiter()) {
       toast({
-        title: "Validation Error",
-        description: "Please fill in all fields",
+        title: "Rate Limit Exceeded",
+        description: "Please wait before sending another message. You can send up to 3 messages per 5 minutes.",
         variant: "destructive",
       });
-      setIsSubmitting(false);
       return;
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    setIsSubmitting(true);
+
+    // Sanitize all inputs
+    const sanitizedData = {
+      name: sanitizeInput(formData.name, 100),
+      email: sanitizeEmailContent(formData.email.toLowerCase()),
+      message: sanitizeInput(formData.message, 1000),
+    };
+
+    // Comprehensive validation
+    const validation = validateFormContent(sanitizedData);
+    if (!validation.isValid) {
+      setValidationErrors(validation.errors);
       toast({
         title: "Validation Error",
-        description: "Please enter a valid email address",
+        description: validation.errors[0],
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -53,41 +70,39 @@ export const Contact = () => {
     }
 
     try {
-      console.log("Sending contact form:", formData);
+      console.log("Sending sanitized contact form:", {
+        name: sanitizedData.name,
+        email: sanitizedData.email,
+        messageLength: sanitizedData.message.length
+      });
 
       const { data, error } = await supabase.functions.invoke(
         "send-contact-email",
         {
-          body: {
-            name: formData.name,
-            email: formData.email,
-            message: formData.message,
-          },
+          body: sanitizedData,
         }
       );
 
       if (error) {
-        throw error;
+        console.error("Supabase function error:", error);
+        throw new Error(error.message || "Failed to send message");
       }
 
       console.log("Email sent successfully:", data);
 
       // Reset form after successful submission
       setFormData({ name: "", email: "", message: "" });
+      setValidationErrors([]);
 
       toast({
         title: "Message Sent!",
         description: "Thank you for your message. I'll get back to you soon!",
       });
     } catch (error: unknown) {
-      if (error instanceof Error) {
-        console.error("Error sending email:", error.message);
-      } else {
-        console.error("Error sending email:", error);
-      }
+      console.error("Error sending email:", error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again later.",
+        description: "Failed to send message. Please try again later or contact me directly.",
         variant: "destructive",
       });
     } finally {
@@ -99,12 +114,21 @@ export const Contact = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    // Basic input sanitization - remove HTML tags
-    const sanitizedValue = value.replace(/<[^>]*>/g, "");
+    
+    // Basic sanitization on input
+    const sanitizedValue = name === 'email' 
+      ? sanitizeEmailContent(value)
+      : sanitizeInput(value, name === 'message' ? 1000 : 100);
+    
     setFormData((prev) => ({
       ...prev,
       [name]: sanitizedValue,
     }));
+    
+    // Clear validation errors when user starts typing
+    if (validationErrors.length > 0) {
+      setValidationErrors([]);
+    }
   };
 
   return (
@@ -133,25 +157,37 @@ export const Contact = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
+              {validationErrors.length > 0 && (
+                <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-md">
+                  <ul className="text-sm text-destructive space-y-1">
+                    {validationErrors.map((error, index) => (
+                      <li key={index}>• {error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-muted-foreground">
-                    Name
+                    Name *
                   </Label>
                   <Input
                     id="name"
                     name="name"
-                    placeholder="Your name"
+                    placeholder="Your name (2-100 characters)"
                     value={formData.name}
                     onChange={handleInputChange}
                     maxLength={100}
+                    minLength={2}
                     required
                     className="retro-border bg-input focus:ring-primary"
+                    autoComplete="name"
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-muted-foreground">
-                    Email
+                    Email *
                   </Label>
                   <Input
                     id="email"
@@ -160,25 +196,31 @@ export const Contact = () => {
                     placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
-                    maxLength={100}
+                    maxLength={254}
                     required
                     className="retro-border bg-input focus:ring-primary"
+                    autoComplete="email"
                   />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-muted-foreground">
-                    Message
+                    Message *
                   </Label>
                   <textarea
                     id="message"
                     name="message"
-                    className="flex min-h-[120px] w-full rounded-md border border-primary/30 bg-input px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm retro-border"
-                    placeholder="Tell me about your project..."
+                    className="flex min-h-[120px] w-full rounded-md border border-primary/30 bg-input px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm retro-border resize-none"
+                    placeholder="Tell me about your project... (10-1000 characters)"
                     value={formData.message}
                     onChange={handleInputChange}
                     maxLength={1000}
+                    minLength={10}
                     required
+                    autoComplete="off"
                   />
+                  <div className="text-xs text-muted-foreground text-right">
+                    {formData.message.length}/1000 characters
+                  </div>
                 </div>
                 <button
                   type="submit"
@@ -187,6 +229,9 @@ export const Contact = () => {
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
+                <p className="text-xs text-muted-foreground">
+                  * Required fields. Rate limited to 3 messages per 5 minutes.
+                </p>
               </form>
             </CardContent>
           </Card>
