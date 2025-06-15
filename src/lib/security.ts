@@ -9,17 +9,18 @@ export const sanitizeEmailContent = (content: string): string => {
   return content
     .replace(/[\r\n]/g, '') // Remove line breaks
     .replace(/[<>]/g, '') // Remove angle brackets
-    .replace(/[%@]/g, '') // Remove potentially dangerous characters in email context
+    .replace(/[%]/g, '') // Remove potentially dangerous characters in email context (but keep @)
     .trim();
 };
 
-// Comprehensive input sanitization
+// Comprehensive input sanitization - more permissive but still secure
 export const sanitizeInput = (input: string, maxLength: number = 1000): string => {
   return input
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove script tags and content
     .replace(/<[^>]*>/g, '') // Remove HTML tags
-    .replace(/[<>'"&]/g, '') // Remove potentially dangerous characters
     .replace(/javascript:/gi, '') // Remove javascript: protocol
-    .replace(/on\w+=/gi, '') // Remove event handlers
+    .replace(/on\w+\s*=/gi, '') // Remove event handlers
+    .replace(/[<>"']/g, '') // Remove only the most dangerous characters, keep spaces and @
     .slice(0, maxLength) // Enforce length limit
     .trim();
 };

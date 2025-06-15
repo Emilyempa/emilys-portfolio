@@ -47,14 +47,14 @@ const validateInput = (data: ContactEmailRequest): { isValid: boolean; errors: s
   };
 };
 
-// Enhanced sanitization
+// Less aggressive sanitization - preserve spaces and @ symbols
 const sanitizeInput = (input: string): string => {
   return input
-    .replace(/[\r\n]/g, ' ') // Replace line breaks with spaces
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '') // Remove script tags and content
     .replace(/<[^>]*>/g, '') // Remove HTML tags
-    .replace(/[<>'"&]/g, '') // Remove potentially dangerous characters
     .replace(/javascript:/gi, '') // Remove javascript: protocol
-    .replace(/on\w+=/gi, '') // Remove event handlers
+    .replace(/on\w+\s*=/gi, '') // Remove event handlers
+    .replace(/[<>"']/g, '') // Remove only the most dangerous characters
     .trim();
 };
 
@@ -175,7 +175,7 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Sanitize inputs
+    // Sanitize inputs - less aggressive now
     const sanitizedData = {
       name: sanitizeInput(requestData.name),
       email: sanitizeInput(requestData.email.toLowerCase()),

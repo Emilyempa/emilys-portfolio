@@ -49,7 +49,7 @@ export const Contact = () => {
 
     setIsSubmitting(true);
 
-    // Sanitize all inputs
+    // Sanitize all inputs - less aggressive now
     const sanitizedData = {
       name: sanitizeInput(formData.name, 100),
       email: sanitizeEmailContent(formData.email.toLowerCase()),
@@ -115,14 +115,10 @@ export const Contact = () => {
   ) => {
     const { name, value } = e.target;
     
-    // Basic sanitization on input
-    const sanitizedValue = name === 'email' 
-      ? sanitizeEmailContent(value)
-      : sanitizeInput(value, name === 'message' ? 1000 : 100);
-    
+    // Minimal sanitization on input - just store the value for most natural typing experience
     setFormData((prev) => ({
       ...prev,
-      [name]: sanitizedValue,
+      [name]: value,
     }));
     
     // Clear validation errors when user starts typing
