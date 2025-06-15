@@ -4,16 +4,21 @@ import { Hero } from "@/components/Hero";
 import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
+import { AccessibilityProvider } from "@/components/AccessibilityProvider";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Contact />
-    </div>
+    <AccessibilityProvider>
+      <div className="min-h-screen bg-background">
+        <Header />
+        <main id="main-content" role="main">
+          <Hero />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+      </div>
+    </AccessibilityProvider>
   );
 };
 
