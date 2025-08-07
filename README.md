@@ -99,7 +99,7 @@ The application will be available at `http://localhost:8080`
 
 ## 🚀 Deployment
 
-### Option 1: Lovable Platform (Recommended)
+### Option 1: Lovable Platform
 This project is optimized for the Lovable platform:
 
 1. **Connect to GitHub**: Link your repository to Lovable
