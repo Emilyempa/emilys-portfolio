@@ -190,7 +190,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
 
     // Get recipient email from environment variable
-    const recipientEmail = Deno.env.get("CONTACT_EMAIL") || "emilypettersson83@gmail.com";
+    const recipientEmail = Deno.env.get("CONTACT_EMAIL") || "emilypettersson@hotmail.com";
 
     // Send email with enhanced security
     const emailResponse = await resend.emails.send({
