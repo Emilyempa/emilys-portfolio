@@ -26,7 +26,7 @@ const skills = [
   {
     category: "Backend",
     icon: Server,
-    technologies: ["Node.js", "REST APIs", "Express.js, "Java"],
+    technologies: ["Node.js", "REST APIs", "Express.js", "Java"],
   },
   {
     category: "Database",
