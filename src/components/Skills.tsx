@@ -41,7 +41,7 @@ const skills = [
   {
     category: "Design",
     icon: Palette,
-    technologies: ["UI/UX Design", "Responsive Design", "Figma", "WCAG"],
+    technologies: ["UI/UX Design", "Figma", "Responsive Design", "WCAG"],
   },
   {
     category: "Development",
