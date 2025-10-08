@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => ({
         "img-src 'self' data: https:",
         "font-src 'self' data:",
         "connect-src 'self' https://bhoauhbplvlutywbtnjm.supabase.co wss://bhoauhbplvlutywbtnjm.supabase.co",
-        "frame-ancestors 'self' https://*.lovable.dev https://*.lovable.app",
+        "frame-ancestors 'self' https://*.lovable.dev https://*.lovable.app https://*.lovableproject.com https://lovableproject.com https://lovable.dev https://lovable.app",
         "base-uri 'self'",
         "form-action 'self'"
       ].join("; ")
