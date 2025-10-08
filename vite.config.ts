@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     headers: {
       // Security headers
       "X-Content-Type-Options": "nosniff",
-      "X-Frame-Options": "DENY",
+      // "X-Frame-Options" intentionally omitted to allow embedding in Lovable preview
       "X-XSS-Protection": "1; mode=block",
       "Referrer-Policy": "strict-origin-when-cross-origin",
       "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => ({
         "img-src 'self' data: https:",
         "font-src 'self' data:",
         "connect-src 'self' https://bhoauhbplvlutywbtnjm.supabase.co wss://bhoauhbplvlutywbtnjm.supabase.co",
-        "frame-ancestors 'none'",
+        "frame-ancestors 'self' https://*.lovable.dev https://*.lovable.app",
         "base-uri 'self'",
         "form-action 'self'"
       ].join("; ")
