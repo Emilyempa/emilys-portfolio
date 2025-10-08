@@ -26,7 +26,7 @@ const skills = [
   {
     category: "Backend",
     icon: Server,
-    technologies: ["Node.js", "REST APIs", "Express.js", "Java"],
+    technologies: ["Node.js", "REST APIs", "Express.js", "Java", "Spring Boot"],
   },
   {
     category: "Database",
@@ -36,7 +36,7 @@ const skills = [
   {
     category: "Tools & DevOps",
     icon: GitBranch,
-    technologies: ["Git", "GitHub", "Docker", "VS Code", "IntelliJ", "CI/CD"],
+    technologies: ["Git", "GitHub", "Docker", "VS Code", "IntelliJ", "CI/CD", "Kubernetes"],
   },
   {
     category: "Design",
