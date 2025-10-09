@@ -31,7 +31,7 @@ const skills = [
   {
     category: "Database",
     icon: Database,
-    technologies: ["MariaDB", "MongoDB", "Supabase"],
+    technologies: ["MariaDB", "MongoDB", "MySQL", "Supabase"],
   },
   {
     category: "Tools & DevOps",
