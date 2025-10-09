@@ -9,7 +9,17 @@ export const Header = () => {
     >
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center space-x-2">
-          <h1 className="text-xl font-bold text-primary retro-glow">Emily's Portfolio</h1>
+          <a 
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="cursor-pointer hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded"
+            aria-label="Scroll to top of page"
+          >
+            <h1 className="text-xl font-bold text-primary retro-glow">Emily's Portfolio</h1>
+          </a>
         </div>
         <nav className="flex items-center space-x-6" role="navigation" aria-label="Main navigation">
           <a 
