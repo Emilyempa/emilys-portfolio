@@ -289,7 +289,7 @@ export const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  I'm a passionate fullstack developer who enjoys exploring
+                  I'm a passionate software developer who enjoys exploring
                   innovative and user-friendly web applications. My projects
                   reflect my commitment to accessibility, intuitive design, and
                   modern development practices. This portfolio is the result of
