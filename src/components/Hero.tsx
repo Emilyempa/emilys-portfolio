@@ -13,10 +13,10 @@ export const Hero = () => {
           <span className="text-primary retro-glow">Emily Pettersson</span>
         </h1>
         <h2 className="text-2xl md:text-3xl font-bold text-secondary mb-4 retro-glow">
-          System Developer
+          Software Developer
         </h2>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          I am a driven system development student and I thrive on continuous
+          I am a driven software development student and I thrive on continuous
           learning and love challenging myself to improve with every project I
           take on. I have one year of experience in full-stack development, and
           this term I will be focusing on Java.
