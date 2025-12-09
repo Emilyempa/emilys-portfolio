@@ -14,7 +14,7 @@ const projects = [
       "A team project that simulates a cinema experience with movie listings, showtimes, ticket booking functionality, and user authentication with login capabilities.",
     tech: ["Next.js", "TypeScript", "MUI", "Tailwind CSS", "MongoDB Atlas"],
     github: "https://github.com/Emilyempa/mock-cinema",
-    demo: "https://mock-cinema-xi.vercel.app/",
+    demo: "https://mock-cinema-ve16.vercel.app",
     image:
       "https://images.unsplash.com/photo-1579642761360-eabd1cca1e81?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
