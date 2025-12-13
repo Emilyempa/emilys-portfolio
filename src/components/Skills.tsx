@@ -36,7 +36,7 @@ const skills = [
   {
     category: "Tools & DevOps",
     icon: GitBranch,
-    technologies: ["Git", "GitHub", "Docker", "VS Code", "IntelliJ", "CI/CD", "Kubernetes"],
+    technologies: ["Git", "GitHub", "Docker", "VS Code", "IntelliJ"],
   },
   {
     category: "Design",
