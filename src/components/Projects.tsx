@@ -38,14 +38,14 @@ const projects = [
       "https://images.unsplash.com/photo-1634128221889-82ed6efebfc3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "To-Do App",
+    title: "Dog Training Tracker",
     description:
-      "A clean and intuitive task management application with features like task creation, completion tracking, and local storage persistence.",
-    tech: ["JavaScript", "CSS", "HTML"],
-    github: "https://github.com/Emilyempa/to-do-app",
-    demo: "https://emilyempa.github.io/ToDoList/",
+      "A full-stack application for tracking dog training progress with user authentication, session management, and secure data handling.",
+    tech: ["Spring Boot", "Java", "Spring Data JPA", "MySQL", "Spring Security", "Docker Compose", "Thymeleaf"],
+    github: "https://github.com/Emilyempa/dog-training-tracker",
+    demo: null,
     image:
-      "https://images.unsplash.com/photo-1665808282962-9bd99d7fe3f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -107,18 +107,20 @@ export const Projects = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-primary/30"
+                    className={`${project.demo ? 'flex-1' : 'w-full'} inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-primary/30`}
                   >
                     View Code
                   </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center rounded-md border border-secondary bg-background hover:bg-secondary/20 hover:text-secondary h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-secondary/30"
-                  >
-                    Visit Site
-                  </a>
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center rounded-md border border-secondary bg-background hover:bg-secondary/20 hover:text-secondary h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-secondary/30"
+                    >
+                      Visit Site
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>
