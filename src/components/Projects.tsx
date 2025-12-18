@@ -40,7 +40,7 @@ const projects = [
   {
     title: "Dog Training Tracker",
     description:
-      "A full-stack application for tracking dog training progress with user authentication, session management, and secure data handling.",
+      "A Fullstack application for managing dogs and their training sessions with secure role-based access. Users can register, view, and track their own dogs and trainings, while admins have full oversight of all data. The app provides both REST endpoints and a browser interface for easy interaction.",
     tech: ["Spring Boot", "Java", "Spring Data JPA", "MySQL", "Spring Security", "Docker Compose", "Thymeleaf"],
     github: "https://github.com/Emilyempa/dog-training-tracker",
     demo: null,
