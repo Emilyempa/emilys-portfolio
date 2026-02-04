@@ -13,7 +13,7 @@ const projects = [
     title: "Thesis Project – User‑Centered OOAD System",
     description:
       "A final thesis project where I developed a complete system using a user‑centered and object‑oriented approach. The work included project planning, creating OOAD models (use‑case, activity, and class diagrams), designing the system, and implementing the final solution. The project concluded with a written report documenting the full development process.",
-    tech: ["Next.js", "Tailwind", "Java", "Spring Boot", "JWT Tokens", "Docker", "MySQL"],
+    tech: ["Next.js", "Tailwind CSS", "Java", "Spring Boot", "JWT Authentication", "Docker", "MySQL"],
     github: "https://github.com/Emilyempa/exam-project-doggydaycare",
     demo: null,
     image: thesisProjectImage,
