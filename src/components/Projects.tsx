@@ -10,13 +10,14 @@ import thesisProjectImage from "@/assets/thesis-project-system-design.jpg";
 
 const projects = [
   {
-    title: "Thesis Project, A User‑Centered OOAD System",
+    title: "SAIK Golf Website",
     description:
-      "A final thesis project where I developed a complete system using a user‑centered and object‑oriented approach. The work included project planning, creating OOAD models (use‑case, activity, and class diagrams), designing the system, and implementing the final solution. The project concluded with a written report documenting the full development process.",
-    tech: ["Next.js", "Tailwind CSS", "Java", "Spring Boot", "JWT Authentication", "Docker Containerization", "MySQL"],
-    github: "https://github.com/Emilyempa/exam-project-doggydaycare",
-    demo: null,
-    image: thesisProjectImage,
+      "A client website built in collaboration with a real customer. I was responsible for the entire creative process, including color palette development, full design in Figma, and writing all the copy and content on the site.",
+    tech: ["WordPress", "Web Design", "Figma", "Client Collaboration", "Copywriting", "Branding"],
+    github: null,
+    demo: "https://www.saikgolf.se",
+    image:
+      "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Wordle Clone",
@@ -48,14 +49,13 @@ const projects = [
       "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    title: "Saik Golf Website",
+    title: "Thesis Project, A User‑Centered OOAD System",
     description:
-      "A client website built in collaboration with a real customer. I was responsible for the entire creative process, including color palette development, full design in Figma, and writing all the copy and content on the site.",
-    tech: ["WordPress", "Web Design", "Figma", "Client Collaboration", "Copywriting", "Branding"],
-    github: null,
-    demo: "https://www.saikgolf.se",
-    image:
-      "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop",
+      "A final thesis project where I developed a complete system using a user‑centered and object‑oriented approach. The work included project planning, creating OOAD models (use‑case, activity, and class diagrams), designing the system, and implementing the final solution. The project concluded with a written report documenting the full development process.",
+    tech: ["Next.js", "Tailwind CSS", "Java", "Spring Boot", "JWT Authentication", "Docker Containerization", "MySQL"],
+    github: "https://github.com/Emilyempa/exam-project-doggydaycare",
+    demo: null,
+    image: thesisProjectImage,
   },
 ];
 
