@@ -51,7 +51,7 @@ const projects = [
     title: "Saik Golf Website",
     description:
       "A client website built in collaboration with a real customer. I was responsible for the entire creative process, including color palette development, full design in Figma, and writing all the copy and content on the site.",
-    tech: ["Web Design", "Figma", "Client Collaboration", "Copywriting", "Branding"],
+    tech: ["WordPress", "Web Design", "Figma", "Client Collaboration", "Copywriting", "Branding"],
     github: null,
     demo: "https://www.saikgolf.se",
     image:
