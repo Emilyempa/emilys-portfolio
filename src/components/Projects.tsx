@@ -17,7 +17,7 @@ const projects = [
     github: null,
     demo: "https://www.saikgolf.se",
     image:
-      "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1592919505780-303950717480?q=80&w=2070&auto=format&fit=crop",
   },
   {
     title: "Wordle Clone",
