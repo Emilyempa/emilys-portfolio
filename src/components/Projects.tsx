@@ -47,6 +47,16 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1587300003388-59208cc962cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+  {
+    title: "Saik Golf Website",
+    description:
+      "A client website built in collaboration with a real customer. I was responsible for the entire creative process, including color palette development, full design in Figma, and writing all the copy and content on the site.",
+    tech: ["Web Design", "Figma", "Client Collaboration", "Copywriting", "Branding"],
+    github: null,
+    demo: "https://www.saikgolf.se",
+    image:
+      "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop",
+  },
 ];
 
 export const Projects = () => {
@@ -80,14 +90,16 @@ export const Projects = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between text-primary">
                   {project.title}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary hover:text-secondary/80 transition-colors hover:retro-glow"
-                  >
-                    <Github className="h-5 w-5" />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-secondary hover:text-secondary/80 transition-colors hover:retro-glow"
+                    >
+                      <Github className="h-5 w-5" />
+                    </a>
+                  )}
                 </CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
@@ -103,20 +115,22 @@ export const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${project.demo ? 'flex-1' : 'w-full'} inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-primary/30`}
-                  >
-                    View Code
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${project.demo ? 'flex-1' : 'w-full'} inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-primary/30`}
+                    >
+                      View Code
+                    </a>
+                  )}
                   {project.demo && (
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center rounded-md border border-secondary bg-background hover:bg-secondary/20 hover:text-secondary h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-secondary/30"
+                      className={`${project.github ? 'flex-1' : 'w-full'} inline-flex items-center justify-center rounded-md border border-secondary bg-background hover:bg-secondary/20 hover:text-secondary h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-secondary/30`}
                     >
                       Visit Site
                     </a>
