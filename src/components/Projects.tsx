@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Github } from "lucide-react";
 import thesisProjectImage from "@/assets/thesis-project-system-design.jpg";
+import saikGolfImage from "@/assets/saik-golf-female-golfer.jpg";
 
 const projects = [
   {
@@ -16,8 +17,7 @@ const projects = [
     tech: ["WordPress", "Web Design", "Figma", "Client Collaboration", "Copywriting", "Branding"],
     github: null,
     demo: "https://www.saikgolf.se",
-    image:
-      "https://images.unsplash.com/photo-1592919505780-303950717480?q=80&w=2070&auto=format&fit=crop",
+    image: saikGolfImage,
   },
   {
     title: "Wordle Clone",
