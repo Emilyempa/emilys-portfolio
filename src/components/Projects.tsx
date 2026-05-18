@@ -90,14 +90,16 @@ export const Projects = () => {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between text-primary">
                   {project.title}
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-secondary hover:text-secondary/80 transition-colors hover:retro-glow"
-                  >
-                    <Github className="h-5 w-5" />
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-secondary hover:text-secondary/80 transition-colors hover:retro-glow"
+                    >
+                      <Github className="h-5 w-5" />
+                    </a>
+                  )}
                 </CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
@@ -113,20 +115,22 @@ export const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${project.demo ? 'flex-1' : 'w-full'} inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-primary/30`}
-                  >
-                    View Code
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${project.demo ? 'flex-1' : 'w-full'} inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-primary/30`}
+                    >
+                      View Code
+                    </a>
+                  )}
                   {project.demo && (
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center rounded-md border border-secondary bg-background hover:bg-secondary/20 hover:text-secondary h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-secondary/30"
+                      className={`${project.github ? 'flex-1' : 'w-full'} inline-flex items-center justify-center rounded-md border border-secondary bg-background hover:bg-secondary/20 hover:text-secondary h-9 px-4 py-2 text-sm transition-all retro-border hover:shadow-lg hover:shadow-secondary/30`}
                     >
                       Visit Site
                     </a>
