@@ -16,10 +16,9 @@ export const Hero = () => {
           Software Developer
         </h2>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          I am a driven software development student and I thrive on continuous
+          I hold a degree in system development and I thrive on continuous
           learning and love challenging myself to improve with every project I
-          take on. I have one year of experience in full-stack development, and
-          this term I will be focusing on Java.
+          take on. I have experience in full-stack development, with a focus on Java.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Hero actions">
           <a
