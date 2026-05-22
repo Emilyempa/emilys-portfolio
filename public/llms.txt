@@ -1,0 +1,7 @@
+# Emily Pettersson — Software Developer Portfolio
+
+> Portfolio of Emily Pettersson, a software developer student specializing in Java, Spring Boot and full-stack web development.
+
+## Pages
+
+- [Home](/): About Emily, skills, projects (SAIK Golf website, thesis project) and contact info.
