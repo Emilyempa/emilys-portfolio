@@ -18,7 +18,8 @@ export const Hero = () => {
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
           I hold a degree in system development and I thrive on continuous
           learning and love challenging myself to improve with every project I
-          take on.
+          take on. I am passionate about usability and delivering complete
+          solutions for the customer.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Hero actions">
           <a
